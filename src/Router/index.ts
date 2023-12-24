@@ -23,7 +23,8 @@ import { config } from '../config';
 
 const corsOptions = {
   origin: 'https://stryfe-forums.netlify.app',
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  credentials: true
 };
 
 export class Router extends Server {
