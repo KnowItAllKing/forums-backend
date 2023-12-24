@@ -10,16 +10,21 @@ import * as Controllers from '../Controllers';
 import { config } from '../config';
 
 
+// const corsOptions = {
+//   credentials: true,
+//   origin: (origin: string, callback: any) => {
+//     if (!origin || config.allowedOrigins.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }
+// }
+
 const corsOptions = {
-  credentials: true,
-  origin: (origin: string, callback: any) => {
-    if (!origin || config.allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}
+  origin: 'https://stryfe-forums.netlify.app',
+  optionsSuccessStatus: 200
+};
 
 export class Router extends Server {
   public database: TypeORMController = new TypeORMController();
